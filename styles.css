@@ -2,11 +2,13 @@
   padding: 0%;
   margin: 0%;
 }
+
 body {
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
+  background-color: rgb(250, 250, 250);
 }
 
 .container {
@@ -17,15 +19,15 @@ body {
   flex-direction: column;
   border-radius: 15px;
   background-color: #f0f0f0;
-  height: 500px;
-  width: 420px;
+  height: 380px;
+  width: 340px;
 }
 .display {
   display: flex;
   justify-content: center;
   border: none;
 
-  width: 420px;
+  width: 100%;
 }
 input {
   width: 100%;
@@ -35,6 +37,7 @@ input {
   border-radius: 15px 15px 0 0;
   padding: 10px;
   font-size: 40px;
+  font-family: "jetbrains mono", monospace;
   text-align: right;
   color: rgb(255, 247, 247);
 }
@@ -42,6 +45,7 @@ input {
   display: flex;
   width: 100%;
   flex-wrap: wrap;
+  position: relative;
 }
 
 .operators {
@@ -60,5 +64,95 @@ input {
   width: 107px;
   height: 60px;
   border: 1.5px solid rgb(143, 143, 143);
-  background-color: rgb(180, 180, 180);
+  background-color: rgb(192, 192, 192);
+}
+.seven-nine {
+  display: flex;
+  width: 75%;
+  height: 60px;
+  border: none;
+  background-color: rgb(255, 255, 255);
+  row-gap: 0px;
+}
+#seven,
+#eight,
+#nine {
+  width: 107px;
+  height: 60px;
+  border: 1px solid rgb(143, 143, 143);
+  background-color: rgb(231, 231, 231);
+  border-radius: 0%;
+}
+.four-six {
+  display: flex;
+  width: 75%;
+  height: 60px;
+  border: none;
+  background-color: rgb(255, 255, 255);
+}
+#four,
+#five,
+#six {
+  width: 107px;
+  height: 60px;
+  border: 1px solid rgb(143, 143, 143);
+  background-color: rgb(231, 231, 231);
+  border-radius: 0%;
+}
+.one-three {
+  display: flex;
+  width: 75%;
+  height: 60px;
+  border: none;
+  background-color: rgb(255, 255, 255);
+}
+#one,
+#two,
+#three {
+  width: 105px;
+  height: 60px;
+  border: 1px solid rgb(143, 143, 143);
+  background-color: rgb(231, 231, 231);
+  border-radius: 0%;
+}
+.zero-dot-clear {
+  display: flex;
+  width: 75%;
+  height: 60px;
+  border: none;
+  background-color: rgb(255, 255, 255);
+}
+#zero,
+#dot,
+#clear {
+  width: 107px;
+  height: 60px;
+  border: 1px solid rgb(143, 143, 143);
+  background-color: rgb(231, 231, 231);
+  border-radius: 0%;
+}
+
+#equals {
+  position: absolute;
+  top: 60px;
+  right: 0px;
+  width: 86px;
+  height: 240px;
+  border: 1px solid rgb(143, 143, 143);
+  background-color: rgb(232, 100, 28);
+  border-radius: 0 0 10px 0;
+}
+
+#zero {
+  border-radius: 0 0 0 10px;
+}
+
+.btn:active {
+  background-color: rgb(117, 117, 117);
+  box-shadow: inset 3px 3px 5px rgba(0, 0, 0, 0.2),
+    inset -3px -3px 5px rgba(0, 0, 0, 0.2);
+}
+.btn {
+  font-size: 25px;
+  font-family: "jetbrains mono", monospace;
 }
