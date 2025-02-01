@@ -1,3 +1,4 @@
+const display = document.getElementById("display");
 const btn1 = document.getElementById("one");
 const btn2 = document.getElementById("two");
 const btn3 = document.getElementById("three");
@@ -8,75 +9,46 @@ const btn7 = document.getElementById("seven");
 const btn8 = document.getElementById("eight");
 const btn9 = document.getElementById("nine");
 const btn0 = document.getElementById("zero");
-const btnadd = document.getElementById("add");
-const btnsub = document.getElementById("subract");
-const btnmul = document.getElementById("multiply");
-const btndiv = document.getElementById("divide");
-const btnequal = document.getElementById("equals");
-const btndelete = document.getElementById("clear");
-const display = document.getElementById("display");
-const btndot = document.getElementById("dot");
-const disvalue = document.getElementById("display").value;
+const plus = document.getElementById("add");
+const minus = document.getElementById("subtract");
+const multi = document.getElementById("multiply");
+const divide = document.getElementById("divide");
+const equal = document.getElementById("equals");
+const dot = document.getElementById("dot");
+const del = document.getElementById("clear");
 
-btn1.addEventListener("click", () => {
-  display.value += "1";
-});
-btn2.addEventListener("click", () => {
-  display.value += "2";
-});
-btn3.addEventListener("click", () => {
-  display.value += "3";
-});
-btn4.addEventListener("click", () => {
-  display.value += "4";
-});
-btn5.addEventListener("click", () => {
-  display.value += "5";
-});
-btn6.addEventListener("click", () => {
-  display.value += "6";
-});
-btn7.addEventListener("click", () => {
-  display.value += "7";
-});
-btn8.addEventListener("click", () => {
-  display.value += "8";
-});
-btn9.addEventListener("click", () => {
-  display.value += "9";
-});
-btn0.addEventListener("click", () => {
-  display.value += "0";
-});
-btnadd.addEventListener("click", () => {
-  display.value += "+";
-});
-btnsub.addEventListener("click", () => {
-  display.value += "-";
-});
-btnmul.addEventListener("click", () => {
-  display.value += "*";
-});
-btndiv.addEventListener("click", () => {
-  display.value += "/";
-});
-btndot.addEventListener("click", () => {
-  display.value += ".";
+function btnCOntrol(btnNAme, digit) {
+  btnNAme.addEventListener(`click`, () => {
+    display.value += digit;
+  });
+}
+
+del.addEventListener(`click`, () => {
+  let currentvalue = display.value;
+  display.value = currentvalue.slice(0, -1);
 });
 
 function calculate() {
-  let value = eval(disvalue);
-  return value;
+  try {
+    const result = eval(display.value);
+    display.value = result;
+  } catch (error) {
+    display.value = "Error";
+  }
 }
 
-btndelete.addEventListener("click", () => {
-  deletefunc();
-});
-
-function deletefunc() {
-  afterdelete = disvalue.slice(0, -1);
-}
-
-btnequal.addEventListener("click", () => {
-  display.value = calculate();
-});
+btnCOntrol(btn1, "1");
+btnCOntrol(btn2, "2");
+btnCOntrol(btn3, "3");
+btnCOntrol(btn4, "4");
+btnCOntrol(btn5, "5");
+btnCOntrol(btn6, "6");
+btnCOntrol(btn7, "7");
+btnCOntrol(btn8, "8");
+btnCOntrol(btn9, "9");
+btnCOntrol(btn0, "0");
+btnCOntrol(plus, "+");
+btnCOntrol(minus, "-");
+btnCOntrol(multi, "*");
+btnCOntrol(divide, "/");
+btnCOntrol(dot, ".");
